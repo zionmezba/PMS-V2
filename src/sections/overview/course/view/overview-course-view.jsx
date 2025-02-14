@@ -55,11 +55,11 @@ export function OverviewCourseView() {
         >
           <Box sx={{ mb: 2 }}>
             <Typography variant="h4" sx={{ mb: 1 }}>
-              Hi, Frankie 👋
+              Assalamu&apos;alaikum, User
             </Typography>
             <Typography
               sx={{ color: 'text.secondary' }}
-            >{`Let's learn something new today!`}</Typography>
+            >{`"The beautiful thing about learning is that nobody can take it away from you." - B.B. King`}</Typography>
           </Box>
 
           <Box
@@ -70,21 +70,21 @@ export function OverviewCourseView() {
             }}
           >
             <CourseWidgetSummary
-              title="Courses in progress"
-              total={6}
+              title="Title Defense"
+              total={1025}
               icon={`${CONFIG.site.basePath}/assets/icons/courses/ic-courses-progress.svg`}
             />
 
             <CourseWidgetSummary
-              title="Courses completed"
-              total={3}
+              title="Phase-I"
+              total={753}
               color="success"
               icon={`${CONFIG.site.basePath}/assets/icons/courses/ic-courses-completed.svg`}
             />
 
             <CourseWidgetSummary
-              title="Certificates"
-              total={2}
+              title="Phase-II"
+              total={512}
               color="secondary"
               icon={`${CONFIG.site.basePath}/assets/icons/courses/ic-courses-certificates.svg`}
             />
