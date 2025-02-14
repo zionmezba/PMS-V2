@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Tooltip from '@mui/material/Tooltip';
+// import Link from '@mui/material/Link';
+// import Tooltip from '@mui/material/Tooltip';
 import { useTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 
-import { RouterLink } from 'src/routes/components';
+// import { RouterLink } from 'src/routes/components';
 
 import { CONFIG } from 'src/config-global';
 import { varAlpha, bgGradient } from 'src/theme/styles';
@@ -16,9 +16,9 @@ export function Section({
   method,
   layoutQuery,
   methods,
-  title = 'Manage the job',
+  title = 'Get Connected',
   imgUrl = `${CONFIG.site.basePath}/assets/illustrations/illustration-dashboard.webp`,
-  subtitle = 'More effectively with optimized workflows.',
+  subtitle = 'More effectively with optimized system.',
   ...other
 }) {
   const theme = useTheme();
@@ -70,7 +70,7 @@ export function Section({
         sx={{ width: 1, aspectRatio: '4/3', objectFit: 'cover' }}
       />
 
-      {!!methods?.length && method && (
+      {/* {!!methods?.length && method && (
         <Box component="ul" gap={2} display="flex">
           {methods.map((option) => {
             const selected = method === option.label.toLowerCase();
@@ -106,7 +106,7 @@ export function Section({
             );
           })}
         </Box>
-      )}
+      )} */}
     </Box>
   );
 }
