@@ -6,8 +6,10 @@ import {
   viVN as viVNCore,
   zhCN as zhCNCore,
   arSA as arSACore,
+  bnBD as bnBDCore,
 } from '@mui/material/locale';
 // date pickers (MUI)
+
 import {
   enUS as enUSDate,
   frFR as frFRDate,
@@ -76,6 +78,16 @@ export const allLangs = [
       components: { ...arSACore.components, ...arSDDataGrid.components },
     },
   },
+  {
+    value: 'bd',
+    label: 'Bangla',
+    countryCode: 'BD',
+    adapterLocale: 'bn',
+    numberFormat: { code: 'bn-BD', currency: 'BDT' },
+    systemValue: {
+      components: { ...bnBDCore.components },
+    },
+  }
 ];
 
 /**
