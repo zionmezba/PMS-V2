@@ -28,16 +28,26 @@ import { useAuthContext } from 'src/auth/hooks';
 // ----------------------------------------------------------------------
 
 export const SignUpSchema = zod.object({
-  firstName: zod.string().min(1, { message: 'First name is required!' }),
-  lastName: zod.string().min(1, { message: 'Last name is required!' }),
+  name: zod.string().min(3, { message: 'Name is required!' }),
+  user_id: zod.string().min(3, { message: 'User ID is required!' }),
   email: zod
     .string()
-    .min(1, { message: 'Email is required!' })
+    .min(5, { message: 'Email is required!' })
     .email({ message: 'Email must be a valid email address!' }),
-  password: zod
+  password1: zod
     .string()
-    .min(1, { message: 'Password is required!' })
-    .min(6, { message: 'Password must be at least 6 characters!' }),
+    .min(6, { message: 'Password must be at least 6 characters!' })
+    .refine((data) => data.password1 === data.password2, {
+      message: "Passwords don't match",
+      path: ['password1'],
+    }),
+  password2: zod
+    .string()
+    .min(6, { message: 'Password must be at least 6 characters!' })
+    .refine((data) => data.password1 === data.password2, {
+      message: "Passwords don't match",
+      path: ['password2'],
+    })
 });
 
 // ----------------------------------------------------------------------
@@ -47,15 +57,17 @@ export function JwtSignUpView() {
 
   const router = useRouter();
 
-  const password = useBoolean();
+  const password1 = useBoolean();
+  const password2 = useBoolean();
 
   const [errorMsg, setErrorMsg] = useState('');
 
   const defaultValues = {
-    firstName: 'Hello',
-    lastName: 'Friend',
-    email: 'hello@gmail.com',
-    password: '@demo1',
+    firstName: '',
+    lastName: '',
+    email: '',
+    password1: '',
+    password2: '',
   };
 
   const methods = useForm({
@@ -70,11 +82,17 @@ export function JwtSignUpView() {
 
   const onSubmit = handleSubmit(async (data) => {
     try {
+
+      if (data.password1 !== data.password2) {
+        setErrorMsg('Password does not match');
+        return;
+      }
+
       await signUp({
         email: data.email,
-        password: data.password,
-        firstName: data.firstName,
-        lastName: data.lastName,
+        password: data.password1,
+        firstName: data.name,
+        user_id: data.user_id,
       });
       await checkUserSession?.();
 
@@ -87,7 +105,7 @@ export function JwtSignUpView() {
 
   const renderHead = (
     <Stack spacing={1.5} sx={{ mb: 5 }}>
-      <Typography variant="h5">Get started absolutely free</Typography>
+      <Typography variant="h5">Sign up for a new account</Typography>
 
       <Stack direction="row" spacing={0.5}>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -103,29 +121,45 @@ export function JwtSignUpView() {
 
   const renderForm = (
     <Stack spacing={3}>
-      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
-        <Field.Text name="firstName" label="First name" InputLabelProps={{ shrink: true }} />
-        <Field.Text name="lastName" label="Last name" InputLabelProps={{ shrink: true }} />
-      </Stack>
+      <Field.Text name="name" label="Full name" InputLabelProps={{ shrink: true }} />
+      <Field.Text name="user_id" label="Your ID" InputLabelProps={{ shrink: true }} />
 
       <Field.Text name="email" label="Email address" InputLabelProps={{ shrink: true }} />
 
-      <Field.Text
-        name="password"
-        label="Password"
-        placeholder="6+ characters"
-        type={password.value ? 'text' : 'password'}
-        InputLabelProps={{ shrink: true }}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton onClick={password.onToggle} edge="end">
-                <Iconify icon={password.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-      />
+      <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+        <Field.Text
+          name="password1"
+          label="Password"
+          placeholder="6+ characters"
+          type={password1.value ? 'text' : 'password'}
+          InputLabelProps={{ shrink: true }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={password1.onToggle} edge="end">
+                  <Iconify icon={password1.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+        <Field.Text
+          name="password2"
+          label="Confirm Password"
+          placeholder="6+ characters"
+          type={password2.value ? 'text' : 'password'}
+          InputLabelProps={{ shrink: true }}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton onClick={password2.onToggle} edge="end">
+                  <Iconify icon={password2.value ? 'solar:eye-bold' : 'solar:eye-closed-bold'} />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+        />
+      </Stack>
 
       <LoadingButton
         fullWidth

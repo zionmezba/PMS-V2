@@ -86,7 +86,7 @@ export function JwtSignInView() {
         </Typography>
 
         <Link component={RouterLink} href={paths.auth.jwt.signUp} variant="subtitle2">
-          Get started
+          Create Account
         </Link>
       </Stack>
     </Stack>
@@ -110,7 +110,7 @@ export function JwtSignInView() {
         <Field.Text
           name="password"
           label="Password"
-          placeholder="6+ characters"
+          placeholder="8+ characters"
           type={password.value ? 'text' : 'password'}
           InputLabelProps={{ shrink: true }}
           InputProps={{

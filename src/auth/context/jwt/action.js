@@ -30,12 +30,12 @@ export const signInWithPassword = async ({ email, password }) => {
 /** **************************************
  * Sign up
  *************************************** */
-export const signUp = async ({ email, password, firstName, lastName }) => {
+export const signUp = async ({ email, password, name, user_id }) => {
   const params = {
     email,
     password,
-    firstName,
-    lastName,
+    name,
+    user_id,
   };
 
   try {
