@@ -1,6 +1,6 @@
 'use client';
 
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
 
 import { BackToTop } from 'src/components/animate/back-to-top';
 import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
@@ -34,28 +34,28 @@ export function HomeView() {
 
       <HomeHero />
 
-      <Stack sx={{ position: 'relative', bgcolor: 'background.default' }}>
-        {/* <HomeMinimal /> */}
+      {/* <Stack sx={{ position: 'relative', bgcolor: 'background.default' }}> */}
+      {/* <HomeMinimal /> */}
 
-          
-        {/* <HomeHugePackElements /> */}
 
-        {/* <HomeForDesigner /> */}
+      {/* <HomeHugePackElements /> */}
 
-        {/* <HomeHighlightFeatures /> */}
+      {/* <HomeForDesigner /> */}
 
-        {/* <HomeIntegrations /> */}
+      {/* <HomeHighlightFeatures /> */}
 
-        {/* <HomePricing /> */}
+      {/* <HomeIntegrations /> */}
 
-        {/* <HomeTestimonials /> */}
+      {/* <HomePricing /> */}
 
-        {/* <HomeFAQs /> */}
+      {/* <HomeTestimonials /> */}
 
-        {/* <HomeZoneUI /> */}
+      {/* <HomeFAQs /> */}
 
-        {/* <HomeAdvertisement /> */}
-      </Stack>
+      {/* <HomeZoneUI /> */}
+
+      {/* <HomeAdvertisement /> */}
+      {/* </Stack> */}
     </>
   );
 }

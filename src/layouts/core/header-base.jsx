@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import Button from '@mui/material/Button';
 import { styled, useTheme } from '@mui/material/styles';
 
 import { paths } from 'src/routes/paths';
@@ -156,26 +155,12 @@ export function HeaderBase({
               {account && <AccountDrawer data-slot="account" data={data?.account} />}
 
               {/* -- Sign in button -- */}
-              {signIn && <SignInButton />}
-
-              {/* -- Purchase button -- */}
-              {purchase && (
-                <Button
-                  data-slot="purchase"
-                  variant="contained"
-                  rel="noopener"
-                  target="_blank"
-                  href={paths.minimalStore}
-                  sx={{
-                    display: 'none',
-                    [theme.breakpoints.up(layoutQuery)]: {
-                      display: 'inline-flex',
-                    },
-                  }}
-                >
-                  Purchase
-                </Button>
-              )}
+              {signIn && <SignInButton sx={{
+                display: 'none',
+                [theme.breakpoints.up(layoutQuery)]: {
+                  display: 'inline-flex',
+                },
+              }} />}
             </Box>
 
             {slots?.rightAreaEnd}

@@ -22,7 +22,7 @@ import { textGradient } from 'src/theme/styles';
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionContainer } from 'src/components/animate';
 
-import { HeroBackground } from './components/hero-background';
+// import { HeroBackground } from './components/hero-background';
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ export function HomeHero({ sx, ...other }) {
   const y2 = useTransformY(scroll.scrollY, distance * -6);
   const y3 = useTransformY(scroll.scrollY, distance * -5);
   const y4 = useTransformY(scroll.scrollY, distance * -4);
-  const y5 = useTransformY(scroll.scrollY, distance * -3);
+  // const y5 = useTransformY(scroll.scrollY, distance * -3);
 
   const opacity = useTransform(
     scroll.scrollY,
@@ -225,7 +225,7 @@ export function HomeHero({ sx, ...other }) {
           <m.div style={{ y: y4 }}>{renderButtons}</m.div>
         </Container>
 
-        <HeroBackground />
+        {/* <HeroBackground /> */}
       </Box>
     </Stack>
   );
