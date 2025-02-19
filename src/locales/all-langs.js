@@ -74,6 +74,13 @@ export const allLangs = [
       components: { ...arSACore.components, ...arSDDataGrid.components },
     },
   },
+  {
+    value: 'bn',
+    label: 'Bengali',
+    countryCode: 'BD',
+    adapterLocale: 'bn',
+    numberFormat: { code: 'bn-BD', currency: 'BDT' },
+  }
 ];
 
 /**

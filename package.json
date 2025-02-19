@@ -1,8 +1,8 @@
 {
   "name": "@minimal-kit/vite-js",
-  "author": "Minimals",
-  "version": "6.0.1",
-  "description": "Vite & JavaScript",
+  "author": "ZiMiZ",
+  "version": "0.0.1",
+  "description": "FYDP Management System",
   "private": true,
   "type": "module",
   "scripts": {

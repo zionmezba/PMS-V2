@@ -5,6 +5,7 @@ import 'dayjs/locale/vi';
 import 'dayjs/locale/fr';
 import 'dayjs/locale/zh-cn';
 import 'dayjs/locale/ar-sa';
+import 'dayjs/locale/bn';
 
 import dayjs from 'dayjs';
 
