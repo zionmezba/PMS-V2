@@ -46,17 +46,100 @@ export const navData = [
    * Overview
    */
   {
-    subheader: 'Overview',
+    // subheader: 'Overview',
     items: [
-      { title: 'App', path: paths.dashboard.root, icon: ICONS.dashboard },
-      { title: 'Ecommerce', path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
-      { title: 'Analytics', path: paths.dashboard.general.analytics, icon: ICONS.analytics },
-      { title: 'Banking', path: paths.dashboard.general.banking, icon: ICONS.banking },
-      { title: 'Booking', path: paths.dashboard.general.booking, icon: ICONS.booking },
-      { title: 'File', path: paths.dashboard.general.file, icon: ICONS.file },
-      { title: 'Course', path: paths.dashboard.general.course, icon: ICONS.course },
+      // { title: 'App', path: paths.dashboard.root, icon: ICONS.dashboard },
+      // { title: 'Ecommerce', path: paths.dashboard.general.ecommerce, icon: ICONS.ecommerce },
+      // { title: 'Analytics', path: paths.dashboard.general.analytics, icon: ICONS.analytics },
+      // { title: 'Banking', path: paths.dashboard.general.banking, icon: ICONS.banking },
+      // { title: 'Booking', path: paths.dashboard.general.booking, icon: ICONS.booking },
+      // { title: 'File', path: paths.dashboard.general.file, icon: ICONS.file },
+      { title: 'Dashboard', path: paths.dashboard.general.course, icon: ICONS.analytics },
     ],
   },
+  {
+    subheader: 'MANAGEMENT',
+    items: [
+      {
+        title: 'Admin Access',
+        path: '#',
+        icon: ICONS.user,
+        children: [
+          { title: 'Students', path: paths.dashboard.user.root, icon: ICONS.banking },
+          { title: 'Faculties', path: paths.dashboard.user.root, icon: ICONS.course },
+          { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.booking },
+          {
+            title: 'Supervison Management',
+            path: '#',
+            icon: ICONS.banking,
+            children: [
+              { title: 'Pending Choices', path: paths.dashboard.user.root, icon: ICONS.banking },
+              { title: 'Change Supervisor', path: paths.dashboard.user.root, icon: ICONS.course },
+            ],
+          },
+        ]
+      }
+    ],
+  },
+  {
+    subheader: 'Supervision',
+    items: [
+      {
+        title: 'Supervisor Access',
+        path: '#',
+        icon: ICONS.user,
+        children: [
+          { title: 'Teams', path: paths.dashboard.user.root, icon: ICONS.banking },
+          { title: 'Students', path: paths.dashboard.user.root, icon: ICONS.course },
+          { title: 'Final Grading', path: paths.dashboard.user.root, icon: ICONS.booking },
+          { title: 'Engaged Students Group', path: paths.dashboard.user.root, icon: ICONS.booking },
+        ]
+      },
+      { title: 'Follow-Up', path: paths.dashboard.user.root, icon: ICONS.booking },
+      { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.booking },
+    ],
+  }, {
+    subheader: 'SITE MANAGEMENT',
+    items: [
+      {
+        title: 'Site Admin Access',
+        path: '#',
+        icon: ICONS.user,
+        children: [
+          { title: 'Semester', path: paths.dashboard.user.root, icon: ICONS.banking },
+          {
+            title: 'Authorization',
+            path: '#',
+            icon: ICONS.banking,
+            children: [
+              { title: 'Authorize Students', path: paths.dashboard.user.root, icon: ICONS.banking },
+              { title: 'Role Management', path: paths.dashboard.user.root, icon: ICONS.course },
+            ],
+          },
+          {
+            title: 'Schedule',
+            path: '#',
+            icon: ICONS.banking,
+            children: [
+              { title: 'Registration Status', path: paths.dashboard.user.root, icon: ICONS.banking },
+              { title: 'Final Grading Status', path: paths.dashboard.user.root, icon: ICONS.course },
+            ],
+          },
+        ]
+      },
+      { title: 'F.A.Q.', path: paths.dashboard.user.root, icon: ICONS.banking },
+      { title: 'Contact Us', path: paths.dashboard.user.root, icon: ICONS.booking },
+      { title: 'About Us', path: paths.dashboard.user.root, icon: ICONS.booking },
+    ],
+  },
+  {
+    subheader: 'System',
+    items: [
+      { title: 'Profile', path: paths.dashboard.user.root, icon: ICONS.user, },
+    ],
+  },
+
+
   /**
    * Management
    */
