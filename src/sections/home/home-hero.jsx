@@ -2,7 +2,6 @@ import { useRef, useState } from 'react';
 import { m, useScroll, useSpring, useTransform, useMotionValueEvent } from 'framer-motion';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
@@ -21,10 +20,8 @@ import { CONFIG } from 'src/config-global';
 import { textGradient } from 'src/theme/styles';
 
 import { Iconify } from 'src/components/iconify';
-import { SvgColor } from 'src/components/svg-color';
 import { varFade, MotionContainer } from 'src/components/animate';
 
-import { HeroBackground } from './components/hero-background';
 
 // ----------------------------------------------------------------------
 
@@ -45,7 +42,7 @@ export function HomeHero({ sx, ...other }) {
   const y2 = useTransformY(scroll.scrollY, distance * -6);
   const y3 = useTransformY(scroll.scrollY, distance * -5);
   const y4 = useTransformY(scroll.scrollY, distance * -4);
-  const y5 = useTransformY(scroll.scrollY, distance * -3);
+  // const y5 = useTransformY(scroll.scrollY, distance * -3);
 
   const opacity = useTransform(
     scroll.scrollY,
@@ -66,18 +63,18 @@ export function HomeHero({ sx, ...other }) {
           mx: 'auto',
           maxWidth: 680,
           fontFamily: theme.typography.fontSecondaryFamily,
-          [theme.breakpoints.up(lgKey)]: { fontSize: 72, lineHeight: '90px' },
+          [theme.breakpoints.up(lgKey)]: { fontSize: 65, lineHeight: '90px' },
         }}
       >
         <Box component="span" sx={{ width: 1, opacity: 0.24 }}>
-          Boost your building
+          Start your next project
         </Box>
-        process with
+        Manage with
         <Box
           component={m.span}
           animate={{ backgroundPosition: '200% center' }}
           transition={{
-            duration: 20,
+            duration: 10,
             ease: 'linear',
             repeat: Infinity,
             repeatType: 'reverse',
@@ -90,7 +87,7 @@ export function HomeHero({ sx, ...other }) {
             ml: { xs: 0.75, md: 1, xl: 1.5 },
           }}
         >
-          Minimal
+          PMS
         </Box>
       </Box>
     </MInview>
@@ -106,7 +103,7 @@ export function HomeHero({ sx, ...other }) {
           [theme.breakpoints.up(lgKey)]: { fontSize: 20, lineHeight: '36px' },
         }}
       >
-        {`The starting point for your next project is based on MUI. \nEasy customization helps you build apps faster and better.`}
+        {`The most advanced and modern project management system in the world. Manage your projects with ease and stay on top of everything. \nWith PMS, you can easily manage your projects, tasks, and team members. \nPMS is the best project management system for your university.`}
       </Typography>
     </MInview>
   );
@@ -130,7 +127,7 @@ export function HomeHero({ sx, ...other }) {
             />
           ))}
         </AvatarGroup>
-        160+ Happy customers
+        1600+ Active Students
       </Box>
     </MInview>
   );
@@ -148,7 +145,7 @@ export function HomeHero({ sx, ...other }) {
             startIcon={<Iconify width={24} icon="iconoir:flash" />}
           >
             <span>
-              Live preview
+              Get started
               <Box
                 component="small"
                 sx={{
@@ -163,19 +160,6 @@ export function HomeHero({ sx, ...other }) {
               </Box>
             </span>
           </Button>
-
-          <Link
-            color="inherit"
-            variant="body2"
-            target="_blank"
-            rel="noopener"
-            href={paths.freeUI}
-            underline="always"
-            sx={{ gap: 0.5, alignItems: 'center', display: 'inline-flex' }}
-          >
-            Get free version
-            <Iconify width={16} icon="eva:external-link-fill" />
-          </Link>
         </Stack>
       </MInview>
 
@@ -194,36 +178,6 @@ export function HomeHero({ sx, ...other }) {
         </Button>
       </MInview>
     </Box>
-  );
-
-  const renderIcons = (
-    <Stack spacing={3} sx={{ textAlign: 'center' }}>
-      <MInview>
-        <Typography variant="overline" sx={{ opacity: 0.4 }}>
-          Available For
-        </Typography>
-      </MInview>
-
-      <Stack spacing={2.5} direction="row">
-        {['js', 'ts', 'nextjs', 'vite', 'figma'].map((platform) => (
-          <MInview key={platform}>
-            {platform === 'nextjs' ? (
-              <SvgColor
-                src={`${CONFIG.site.basePath}/assets/icons/platforms/ic-${platform}.svg`}
-                sx={{ width: 24, height: 24 }}
-              />
-            ) : (
-              <Box
-                component="img"
-                alt={platform}
-                src={`${CONFIG.site.basePath}/assets/icons/platforms/ic-${platform}.svg`}
-                sx={{ width: 24, height: 24 }}
-              />
-            )}
-          </MInview>
-        ))}
-      </Stack>
-    </Stack>
   );
 
   return (
@@ -283,10 +237,9 @@ export function HomeHero({ sx, ...other }) {
           </Stack>
           <m.div style={{ y: y3 }}>{renderRatings}</m.div>
           <m.div style={{ y: y4 }}>{renderButtons}</m.div>
-          <m.div style={{ y: y5 }}>{renderIcons}</m.div>
         </Container>
 
-        <HeroBackground />
+        {/* <HeroBackground /> */}
       </Box>
     </Stack>
   );

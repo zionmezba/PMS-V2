@@ -73,8 +73,8 @@ export function Footer({ layoutQuery, sx }) {
                 [theme.breakpoints.up(layoutQuery)]: { mx: 'unset' },
               }}
             >
-              The starting point for your next project with Minimal UI Kit, built on the newest
-              version of Material-UI ©, ready to be customized to your style.
+              We are a experts from Education sectors. We are here to help you to find the best solution
+              for your education.
             </Typography>
 
             <Stack
@@ -160,7 +160,7 @@ export function HomeFooter({ sx }) {
         <Box sx={{ mt: 1, typography: 'caption' }}>
           © All rights reserved.
           <br /> made by
-          <Link href="https://minimals.cc/"> minimals.cc </Link>
+          <Link href="https://zionmezba.github.io/Zion-Portfolio/"> ZiON </Link>
         </Box>
       </Container>
     </Box>
