@@ -18,7 +18,6 @@ import { varAlpha } from 'src/theme/styles';
 
 import { Iconify, SocialIcon } from 'src/components/iconify';
 
-import { ProfilePostItem } from './profile-post-item';
 
 // ----------------------------------------------------------------------
 
@@ -37,17 +36,17 @@ export function ProfileHome({ info, posts }) {
         direction="row"
         divider={<Divider orientation="vertical" flexItem sx={{ borderStyle: 'dashed' }} />}
       >
-        <Stack width={1}>
+        {/* <Stack width={1}>
           {fNumber(info.totalFollowers)}
           <Box component="span" sx={{ color: 'text.secondary', typography: 'body2' }}>
-            Follower
+            
           </Box>
-        </Stack>
+        </Stack> */}
 
         <Stack width={1}>
           {fNumber(info.totalFollowing)}
           <Box component="span" sx={{ color: 'text.secondary', typography: 'body2' }}>
-            Following
+            Follow-Ups
           </Box>
         </Stack>
       </Stack>
@@ -177,10 +176,10 @@ export function ProfileHome({ info, posts }) {
       <Grid xs={12} md={8}>
         <Stack spacing={3}>
           {renderPostInput}
-
-          {posts.map((post) => (
+          {/* TODO: Implement ProfilePostItem */}
+          {/* {posts.map((post) => (
             <ProfilePostItem key={post.id} post={post} />
-          ))}
+          ))} */}
         </Stack>
       </Grid>
     </Grid>

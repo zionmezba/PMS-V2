@@ -21,7 +21,7 @@ import { AccountChangePassword } from '../account-change-password';
 
 const TABS = [
   { value: 'general', label: 'General', icon: <Iconify icon="solar:user-id-bold" width={24} /> },
-  { value: 'billing', label: 'Billing', icon: <Iconify icon="solar:bill-list-bold" width={24} /> },
+  // { value: 'billing', label: 'Billing', icon: <Iconify icon="solar:bill-list-bold" width={24} /> },
   {
     value: 'notifications',
     label: 'Notifications',

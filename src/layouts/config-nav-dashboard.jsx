@@ -70,7 +70,7 @@ export const navData = [
       {
         title: 'Admin Access',
         path: '#',
-        icon: ICONS.admin,
+        icon: ICONS.lock,
         children: [
           { title: 'Students', path: paths.dashboard.user.root },
           { title: 'Faculties', path: paths.dashboard.user.root },
@@ -93,7 +93,7 @@ export const navData = [
       {
         title: 'Supervisor Access',
         path: '#',
-        icon: ICONS.supervision,
+        icon: ICONS.job,
         children: [
           { title: 'Teams', path: paths.dashboard.user.root },
           { title: 'Students', path: paths.dashboard.user.root },
@@ -102,30 +102,28 @@ export const navData = [
         ]
       },
       { title: 'Follow-Up', path: paths.dashboard.user.root, icon: ICONS.followup },
-      { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.event },
+      { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.kanban },
     ],
   }, {
     subheader: 'SITE MANAGEMENT',
     items: [
       {
-        title: 'Site Admin Access',
+        title: 'Site Settings',
         path: '#',
-        icon: ICONS.user,
+        icon: ICONS.menuItem,
         children: [
-          { title: 'Semester', path: paths.dashboard.user.root, icon: ICONS.banking },
+          { title: 'Semester', path: paths.dashboard.user.root },
           {
             title: 'Authorization',
             path: '#',
-            icon: ICONS.banking,
             children: [
-              { title: 'Authorize Students', path: paths.dashboard.user.root, icon: ICONS.banking },
-              { title: 'Role Management', path: paths.dashboard.user.root, icon: ICONS.course },
+              { title: 'Authorize Students', path: paths.dashboard.user.root },
+              { title: 'Role Management', path: paths.dashboard.user.root },
             ],
           },
           {
             title: 'Schedule',
             path: '#',
-            icon: ICONS.banking,
             children: [
               { title: 'Registration Status', path: paths.dashboard.user.root, icon: ICONS.banking },
               { title: 'Final Grading Status', path: paths.dashboard.user.root, icon: ICONS.course },
@@ -141,7 +139,13 @@ export const navData = [
   {
     subheader: 'System',
     items: [
-      { title: 'Profile', path: paths.dashboard.user.root, icon: ICONS.user, },
+      {
+        title: 'Profile', path: paths.dashboard.user.root, icon: ICONS.user,
+        children: [
+          { title: 'My Profile', path: paths.dashboard.user.root },
+          { title: 'Account Settings', path: paths.dashboard.user.account },
+        ],
+      },
     ],
   },
 
