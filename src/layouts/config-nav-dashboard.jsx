@@ -37,6 +37,13 @@ const ICONS = {
   analytics: icon('ic-analytics'),
   dashboard: icon('ic-dashboard'),
   parameter: icon('ic-parameter'),
+  admin: icon('ic-admin'),
+  students: icon('ic-students'),
+  faculty: icon('ic-faculty'),
+  event: icon('ic-event'),
+  supervision: icon('ic-supervision'),
+  followup: icon('ic-followup'),
+  faq: icon('ic-faq'),
 };
 
 // ----------------------------------------------------------------------
@@ -63,18 +70,17 @@ export const navData = [
       {
         title: 'Admin Access',
         path: '#',
-        icon: ICONS.user,
+        icon: ICONS.admin,
         children: [
-          { title: 'Students', path: paths.dashboard.user.root, icon: ICONS.banking },
-          { title: 'Faculties', path: paths.dashboard.user.root, icon: ICONS.course },
-          { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.booking },
+          { title: 'Students', path: paths.dashboard.user.root },
+          { title: 'Faculties', path: paths.dashboard.user.root },
+          { title: 'FYDP Events', path: paths.dashboard.user.root },
           {
             title: 'Supervison Management',
             path: '#',
-            icon: ICONS.banking,
             children: [
-              { title: 'Pending Choices', path: paths.dashboard.user.root, icon: ICONS.banking },
-              { title: 'Change Supervisor', path: paths.dashboard.user.root, icon: ICONS.course },
+              { title: 'Pending Choices', path: paths.dashboard.user.root },
+              { title: 'Change Supervisor', path: paths.dashboard.user.root },
             ],
           },
         ]
@@ -87,16 +93,16 @@ export const navData = [
       {
         title: 'Supervisor Access',
         path: '#',
-        icon: ICONS.user,
+        icon: ICONS.supervision,
         children: [
-          { title: 'Teams', path: paths.dashboard.user.root, icon: ICONS.banking },
-          { title: 'Students', path: paths.dashboard.user.root, icon: ICONS.course },
-          { title: 'Final Grading', path: paths.dashboard.user.root, icon: ICONS.booking },
-          { title: 'Engaged Students Group', path: paths.dashboard.user.root, icon: ICONS.booking },
+          { title: 'Teams', path: paths.dashboard.user.root },
+          { title: 'Students', path: paths.dashboard.user.root },
+          { title: 'Final Grading', path: paths.dashboard.user.root },
+          { title: 'Engaged Students Group', path: paths.dashboard.user.root },
         ]
       },
-      { title: 'Follow-Up', path: paths.dashboard.user.root, icon: ICONS.booking },
-      { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.booking },
+      { title: 'Follow-Up', path: paths.dashboard.user.root, icon: ICONS.followup },
+      { title: 'FYDP Events', path: paths.dashboard.user.root, icon: ICONS.event },
     ],
   }, {
     subheader: 'SITE MANAGEMENT',
@@ -127,9 +133,9 @@ export const navData = [
           },
         ]
       },
-      { title: 'F.A.Q.', path: paths.dashboard.user.root, icon: ICONS.banking },
-      { title: 'Contact Us', path: paths.dashboard.user.root, icon: ICONS.booking },
-      { title: 'About Us', path: paths.dashboard.user.root, icon: ICONS.booking },
+      { title: 'F.A.Q.', path: paths.dashboard.user.root, icon: ICONS.faq },
+      { title: 'Contact Us', path: paths.dashboard.user.root, icon: ICONS.chat },
+      { title: 'About Us', path: paths.dashboard.user.root, icon: ICONS.blog },
     ],
   },
   {
