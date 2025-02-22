@@ -49,16 +49,16 @@ import { OrderTableFiltersResult } from '../order-table-filters-result';
 const STATUS_OPTIONS = [{ value: 'all', label: 'All' }, ...ORDER_STATUS_OPTIONS];
 
 const TABLE_HEAD = [
-  { id: 'orderNumber', label: 'Order', width: 88 },
-  { id: 'name', label: 'Customer' },
-  { id: 'createdAt', label: 'Date', width: 140 },
+  { id: 'projectId', label: 'Project ID', width: 100 },
+  { id: 'name', label: 'Name' },
+  { id: 'phase', label: 'Phase', width: 100 },
   {
-    id: 'totalQuantity',
-    label: 'Items',
+    id: 'batch',
+    label: 'Batch',
     width: 120,
     align: 'center',
   },
-  { id: 'totalAmount', label: 'Price', width: 140 },
+  { id: 'supervisor', label: 'Supervisor', width: 140 },
   { id: 'status', label: 'Status', width: 110 },
   { id: '', width: 88 },
 ];
@@ -144,11 +144,11 @@ export function OrderListView() {
     <>
       <DashboardContent>
         <CustomBreadcrumbs
-          heading="List"
+          heading="Students List (Team)"
           links={[
             { name: 'Dashboard', href: paths.dashboard.root },
-            { name: 'Order', href: paths.dashboard.order.root },
-            { name: 'List' },
+            { name: 'Admin', href: paths.dashboard.order.root },
+            { name: 'Student List' },
           ]}
           sx={{ mb: { xs: 3, md: 5 } }}
         />
@@ -176,13 +176,12 @@ export function OrderListView() {
                       'soft'
                     }
                     color={
-                      (tab.value === 'completed' && 'success') ||
-                      (tab.value === 'pending' && 'warning') ||
-                      (tab.value === 'cancelled' && 'error') ||
+                      (tab.value === 'graduated' && 'success') ||
+                      (tab.value === 'active' && 'warning') ||
                       'default'
                     }
                   >
-                    {['completed', 'pending', 'cancelled', 'refunded'].includes(tab.value)
+                    {['graduated', 'active'].includes(tab.value)
                       ? tableData.filter((user) => user.status === tab.value).length
                       : tableData.length}
                   </Label>

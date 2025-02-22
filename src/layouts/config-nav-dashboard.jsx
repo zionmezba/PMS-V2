@@ -72,7 +72,7 @@ export const navData = [
         path: '#',
         icon: ICONS.lock,
         children: [
-          { title: 'Students', path: paths.dashboard.user.root },
+          { title: 'Students', path: paths.dashboard.order.root},
           { title: 'Faculties', path: paths.dashboard.user.root },
           { title: 'FYDP Events', path: paths.dashboard.user.root },
           {
